@@ -31,10 +31,10 @@ class Flight(JS):
         }
 
     @staticmethod
-    def cdate(date: str):
+    def cdate(date: str) -> str:
         return "-".join((date[0:4], date[4:6], date[6:8]))
 
-    def code(self, city: str):
+    def code(self, city: str) -> str:
         return requests.get(self.__city_code % city).json()["data"]["Data"][0]
 
     def Query(self, date: str, dcity: str, acity: str):
